@@ -1,0 +1,24 @@
+@startuml
+
+Class AbstractClass
+Class ConcreteClass
+Class Client
+
+AbstractClass <|-- ConcreteClass
+
+Client ..>AbstractClass
+
+Class AbstractClass{
+   templateMethod():void
+   specificMethod():void
+   abstractMethod():void
+   hookMethod():boolean
+}
+
+Class ConcreteClass{
+   specificMethod():void
+   abstractMethod():void
+   hookMethod():boolean
+}
+
+@enduml

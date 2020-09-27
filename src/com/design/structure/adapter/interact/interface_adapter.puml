@@ -1,0 +1,8 @@
+@startuml
+
+interface Adapter
+Class client
+
+client..> Adapter
+
+@enduml

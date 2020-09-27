@@ -1,0 +1,22 @@
+@startuml
+
+Class Handler
+Class ConcreteHandlerA
+Class ConcreteHandlerB
+Class Client
+Handler<|--ConcreteHandlerA
+Handler<|--ConcreteHandlerB
+Handler o-- Handler
+Client ..> Handler
+Class Handler{
+    handler:Handler
+    handlerRequest():void
+}
+Class ConcreteHandlerA{
+    handlerRequest():void
+}
+Class ConcreteHandlerB{
+    handlerRequest():void
+}
+
+@enduml

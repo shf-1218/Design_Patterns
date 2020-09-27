@@ -1,0 +1,32 @@
+@startuml
+
+interface Observer
+Class Subject
+Class ConcreteObserverA
+Class ConcreteObserverB
+Class ConcreteSubject
+
+Observer <|..ConcreteObserverA
+Observer <|..ConcreteObserverB
+
+Subject<|--ConcreteSubject
+
+Subject o-- Observer
+
+interface Observer{
+    response():void
+}
+interface ConcreteObserverA{
+    response():void
+}
+
+interface ConcreteObserverB{
+    response():void
+}
+Class Subject{
+    add(Observer:Observer):void
+    remove(Observer:Observer):void
+    notifyObserver():void
+}
+
+@enduml

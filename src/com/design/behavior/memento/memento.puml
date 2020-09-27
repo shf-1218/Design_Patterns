@@ -1,0 +1,24 @@
+@startuml
+
+Class Memento
+Class Caretaker
+Class Originator
+Class Client
+
+Caretaker o-- Memento
+Originator --> Memento
+Client ..>Caretaker
+Client ..>Originator
+
+Class Memento{
+   state:String
+}
+Class Caretaker{
+  memento:Memento
+}
+Class Originator{
+  state:String
+  createMemento():Memento
+  restoreMemento(Memento memento):void
+}
+@enduml

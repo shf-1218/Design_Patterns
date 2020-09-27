@@ -1,0 +1,29 @@
+@startuml
+
+interface Element
+interface Visitor
+
+class ConcreteVisitorA
+class ConcreteVisitorB
+
+class ConcreteElementA
+class ConcreteElementB
+
+class ObjectStructure
+
+Element<|..ConcreteElementA
+Element<|..ConcreteElementB
+
+Visitor<|..ConcreteVisitorA
+Visitor<|..ConcreteVisitorB
+
+
+interface Element{
+    accept(Visitor Visitor):void
+    operation():void
+}
+interface Visitor{
+    void visit(ConcreteElementA element);
+    void visit(ConcreteElementB element);
+}
+@enduml

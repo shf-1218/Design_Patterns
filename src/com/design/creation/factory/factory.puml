@@ -1,0 +1,45 @@
+@startuml
+
+interface Product
+Class ConcreteProductA
+Class ConcreteProductB
+interface AbstractFactory
+Class ConcreteFactoryA
+Class ConcreteFactoryB
+Class Client
+
+AbstractFactory <|.. ConcreteFactoryA
+AbstractFactory <|.. ConcreteFactoryB
+
+Product <|.. ConcreteProductA
+Product <|.. ConcreteProductB
+
+
+Client..>AbstractFactory
+Client..>Product
+
+ConcreteProductA<--ConcreteFactoryA
+ConcreteProductB<--ConcreteFactoryB
+
+
+interface Product{
+  show()
+}
+
+interface AbstractFactory{
+   newProduct()
+}
+Class ConcreteProductA {
+  show()
+}
+Class ConcreteProductB {
+  show()
+}
+Class ConcreteFactoryA {
+  newProduct()
+}
+Class ConcreteFactoryB {
+  newProduct()
+}
+
+@enduml

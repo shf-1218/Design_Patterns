@@ -1,0 +1,26 @@
+@startuml
+
+Class Flyweight
+Class UnsharedConcreteFlyweight
+Class ConcreteFlyweight
+Class FlyweightFactory
+Class Client
+
+FlyweightFactory o--  Flyweight
+
+Flyweight<|.. ConcreteFlyweight
+Flyweight<|-- UnsharedConcreteFlyweight
+
+Client ..> Flyweight
+Client ..> FlyweightFactory
+
+Class Flyweight{
+    operation():void
+}
+Class ConcreteFlyweight{
+    operation():void
+}
+Class FlyweightFactory{
+    getFlyweight():flyweight
+}
+@enduml

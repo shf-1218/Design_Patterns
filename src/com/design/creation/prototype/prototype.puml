@@ -1,0 +1,17 @@
+@startuml
+
+interface Prototype
+Class Realizetype
+Class Client
+
+Prototype <|-- Realizetype
+Client..>Prototype
+
+
+interface Prototype{
+    clone()
+}
+Class Realizetype{
+ clone()
+}
+@enduml

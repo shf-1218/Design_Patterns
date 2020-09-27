@@ -1,0 +1,23 @@
+@startuml
+
+interface Command
+Class ConcreteCommandOpen
+Class ConcreteCommandClose
+Class Invoker
+Class Receiver
+Command<|..ConcreteCommandOpen
+Command<|..ConcreteCommandClose
+
+Invoker ..> Command
+Command o-- Receiver
+interface Command{
+   receiver:Receiver
+   execute():void
+}
+interface Invoker{
+   command:Command
+   call():void
+}
+
+
+@enduml

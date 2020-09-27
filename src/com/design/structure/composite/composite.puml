@@ -1,0 +1,26 @@
+@startuml
+
+interface Component
+Class Composite
+Class Leaf
+Class Client
+Component <|.. Leaf
+Composite o-- Component
+Component <|.. Composite
+Client..> Component
+Client..>Composite
+
+interface Component{
+    operation():void
+}
+Class Composite{
+    cmponentList:List<Component>
+    add(Component):void
+    remove(Component) void
+    getChild():Component
+    operation():void
+}
+Class Leaf{
+    operation():void
+}
+@enduml

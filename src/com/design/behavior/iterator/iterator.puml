@@ -1,0 +1,22 @@
+@startuml
+
+interface Iterator
+interface Aggregate
+Class ConcreteIterator
+Class ConcreteAggregate
+
+Iterator <|.. ConcreteIterator
+Aggregate <|.. ConcreteAggregate
+
+interface Iterator{
+     first():Object
+     next():Object
+     hasNext():boolean
+}
+interface Aggregate{
+      add(Object obj):void
+      remove(Object obj):void
+      getIterator():Iterator
+}
+
+@enduml

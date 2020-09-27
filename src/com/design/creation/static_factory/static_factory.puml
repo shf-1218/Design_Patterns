@@ -1,0 +1,31 @@
+@startuml
+
+interface Product
+Class ConcreteProductA
+Class ConcreteProductB
+Class SimpleFactory
+Class Client
+
+Product <|.. ConcreteProductA
+Product <|.. ConcreteProductB
+
+Client..>SimpleFactory
+Client..>Product
+
+ConcreteProductA<--SimpleFactory
+ConcreteProductB<--SimpleFactory
+
+
+interface Product{
+  show()
+}
+Class ConcreteProductA {
+  show()
+}
+Class ConcreteProductB {
+  show()
+}
+Class SimpleFactory{
+ makeProduct():Product
+}
+@enduml

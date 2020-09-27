@@ -1,0 +1,25 @@
+@startuml
+
+abstract class Mediator
+abstract class Colleague
+
+Class ConcreteMediator
+Class ConcreteColleagueA
+Class ConcreteColleagueB
+
+Mediator <|-- ConcreteMediator
+Colleague <|-- ConcreteColleagueA
+Colleague <|-- ConcreteColleagueB
+Mediator --o Colleague
+ConcreteMediator o-- Colleague
+
+Class Mediator{
+    register(Colleague colleague):void
+    relay(Colleague colleague):void
+}
+class Colleague{
+    mediator:Mediator
+    send():void
+    receive():void
+}
+@enduml

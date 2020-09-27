@@ -1,0 +1,33 @@
+@startuml
+
+interface Builder
+
+Class Product
+Class ConcreteBuilder
+Class Director
+Class Client
+
+Builder<|.. ConcreteBuilder
+Product <.. ConcreteBuilder
+Director *.. Builder
+
+Client..>Builder
+Client..>Product
+Client..>Director
+
+Class Product{
+   param:String
+   show():void
+}
+interface Builder{
+   buildParam():void
+   getResult():Product
+}
+Class ConcreteBuilder{
+   buildParam():void
+}
+Class Director{
+   builder:Builder
+   construct():Product
+}
+@enduml

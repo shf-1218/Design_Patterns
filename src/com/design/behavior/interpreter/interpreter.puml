@@ -1,0 +1,24 @@
+@startuml
+
+interface AbstractExpression
+Class NonterminalExpression
+Class TerminalExpression
+Class Context
+AbstractExpression<|.. NonterminalExpression
+AbstractExpression<|.. TerminalExpression
+Context o-- AbstractExpression
+
+interface AbstractExpression{
+    interpret(String info):void
+}
+
+Class NonterminalExpression{
+    left:AbstractExpression
+    right:AbstractExpression
+}
+
+Class Context{
+    strategy:Strategy
+    strategy():void
+}
+@enduml

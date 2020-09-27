@@ -1,0 +1,30 @@
+@startuml
+
+Class Facade
+Class SubSystemA
+Class SubSystemB
+Class SubSystemC
+Class Client
+
+Facade..> SubSystemA
+Facade..> SubSystemB
+Facade..> SubSystemC
+
+Client..> Facade
+
+Class Facade{
+    operation():void
+}
+
+Class SubSystemA{
+    operationA():void
+}
+Class SubSystemB{
+    operationB():void
+}
+Class SubSystemC{
+    operationC():void
+}
+
+
+@enduml

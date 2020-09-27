@@ -1,0 +1,34 @@
+@startuml
+
+interface Component
+Class ConcreteComponent
+Class Decorator
+Class ConcreteDecorator
+Class Client
+
+Component <|.. ConcreteComponent
+Component <|.. Decorator
+
+Decorator <|-- ConcreteDecorator
+Decorator o-- Component
+
+Client ..> Decorator
+Client ..> Component
+
+interface Component{
+    operation():void
+}
+Class ConcreteComponent{
+    operation():void
+}
+
+Class Decorator{
+    component:Component
+    operation():void
+}
+
+Class ConcreteDecorator{
+    operation():void
+}
+
+@enduml
